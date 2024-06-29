@@ -9,7 +9,7 @@
 body{
     font-family: "Red Hat Display", sans-serif;  /*estilo de letra*/
     font-size: 16px; /*tamano del texto*/
-    background-image: url(/img/call-of-duty-black-ops-3.jpg);
+    background-image: url(/img/fondo-menu1.webp);
 }
 
 *{
@@ -193,4 +193,15 @@ body{
     gap: 0.5rem;
     align-items: center;
     flex-wrap: nowrap;
+}
+
+.action-buttons a{
+    text-decoration: none; /*desaparece la linea del link*/
+    white-space: nowrap;
+    padding: 0.25rem 0.5rem; /*sepracion de los costados de los botones*/
+    transition: all 0.2s ease-in-out;
+}
+
+.action-buttons a:hover{
+    opacity: .75;
 }
