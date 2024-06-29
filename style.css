@@ -1,0 +1,196 @@
+:root{
+    --primary: #0969DA;
+    --background: #24292F;
+    --gray: #847F90;
+    --white: #FCFCFC;
+    --navbar-height: 3.75rem;
+}
+
+body{
+    font-family: "Red Hat Display", sans-serif;  /*estilo de letra*/
+    font-size: 16px; /*tamano del texto*/
+    background-image: url(/img/call-of-duty-black-ops-3.jpg);
+}
+
+*{
+    margin: 0; /*sin espacion de arriba y abajo*/
+    padding: 0; /*sin espacio por los lados*/
+    box-sizing: border-box;
+}
+
+.menu__wrapper{
+    display: flex; /*sepoine en linea el etexto*/
+    position: fixed;
+    flex-direction: row;
+    justify-content: space-between;
+    width: 100vw; /*separacion de los botones*/
+    z-index: 2;
+    gap: 1.5rem;
+    background: var(--background); /*color de header [link de colores background]*/
+    height: var(--navbar-height); /*tamano del header*/
+    padding: 0.1rem;
+    align-items: center;
+}
+
+.menu__bar{
+    display: flex;
+    gap: 1.5rem;  /*separacuion de costado*/
+    align-items: center;
+}
+
+.logo{
+    width: 3rem;   /*tamano del logo*/
+    gap: 1.5rem;
+    cursor: pointer;
+}
+
+.logo svg{
+    fill: var(--white);
+}
+
+.navigation{
+    display: flex; /*alineacion de todos los grupos */
+    flex-direction: row;
+    list-style-type: row;  /*numeracion */
+    align-items: center;
+    gap: 0.5rem;
+    background: var(--background);
+}
+
+.navigation > li{
+    display: flex; /*se poiene en linea los botones*/
+    position: relative;
+    cursor: pointer;
+    align-items: center; /*se centran los botones*/
+    height: 2.625rem;
+}
+
+.navigation > li > button > svg{
+    fill: var(--white);
+    color: var(--white);
+    transition: all 0.2s ease-in-out;
+}
+.navigation > li > a{
+    color: var(--white);
+    font-size: 0.875rem;
+    text-decoration: none;
+    transition: all 0.2s ease-in-out;
+}
+
+.navigation > li >button{
+    color: var(--white); /*color de letra del boton*/
+    border-bottom: 2px solid transparent;
+    transition: all 0.3s ease;
+    text-decoration: none;
+    border: none;
+    cursor: pointer;
+    font-weight: 500;
+    gap: 0.25rem;
+    opacity: 1;
+    align-items: center;
+    font-size: 0.875rem;
+    flex-wrap: nowrap;
+    white-space: nowrap;
+    background: none; /*le quita el contorno al botonon" product", "solutions"*/
+    display: flex;
+    padding: 0.185rem 0;
+    position: relative;
+    transition: all 0.25s ease-in-out;
+}
+
+.dropdown{
+    position: absolute;
+    top: 2.625rem;
+    min-width: 15rem;
+    border-radius: 0.5rem;
+    background: var(--white); /*se crea un cuadro blanco*/
+    display: none;
+    flex-direction: column;
+    padding: 1rem;
+    box-shadow: 0 5px 30px 
+    rgba(16, 107, 198, 0.1),
+    0 0  1px rgba(27, 31, 35, 0.4),
+    0 1px 2px rgba(27, 31, 35, 0.15);
+    z-index: 2;
+    animation: fadeIn 0.2s ease-in-out;
+}
+
+@keyframes fadeIn {
+    from{
+        opacity: 0;
+        transform: scale(0.99) translateY(-0.7em);
+        transform-origin: top;
+    }
+    to {
+        opacity: 1;
+        transform: scale(1) translateY(0);
+    }
+}
+
+.dropdown h3{
+    font-size: 0.875rem;
+    font-weight: 600;
+    margin-bottom: 0.5rem;
+}
+
+.list-menu-items{
+    display: flex;
+    list-style-type: none;
+    flex-direction: column;
+    gap: 0.25rem;
+}
+
+.list-menu-items > li > a {
+    display: flex;
+    gap: 1rem;
+    font-size: 0.875rem;
+    width: 100%;
+    color: var(--gray);   /*color de letra de los link cambia de color "solutions","open source"*/
+    text-decoration: none;
+}
+
+.list-menu-items > li > a:hover{
+    color: var(--primary);   /*al pasar el cusoir por los link cambia de color "solutions","open source"*/
+}
+
+.list-items-with-description{
+    list-style: none;
+}
+
+.list-items-with-description li{
+    display: flex;
+    padding: 0.25rem;
+    gap: 1rem;
+    width: 100%;
+}
+
+.list-items-with-description li:hover{
+    color: var(--primary);
+}
+
+.list-items-with-description li svg{
+    width: 1rem;
+    height: 1rem;
+    stroke: var(--primary);
+}
+
+.item-title h3 {
+    font-size: 0.875rem;
+    font-weight: 600;
+}
+
+.item-title p{
+    font-size: 0.75rem;
+}
+
+.navigation > li:hover .dropdown{   /*al pasar el boton sobre "produc", "solutions" y salen las opciones*/
+    display: flex;
+    opacity: 1;
+}
+
+.action-buttons{
+    display: flex;
+    gap: 0.5rem;
+    align-items: center;
+    flex-wrap: nowrap;
+}
